@@ -397,12 +397,12 @@
 <div class="hero">
   <div class="hero-tag">📋 README.md</div>
   <h1>VMware <span>NSX</span> 學習路徑大綱</h1>
-  <p class="hero-desc">從 vSphere 網路基礎到 AVI 負載平衡，適合混合程度的建置團隊。共 5 個 Phase，16 週完整課程規劃。</p>
+  <p class="hero-desc">從 vSphere 網路基礎到 AVI 負載平衡，適合混合程度的建置團隊。兩週一次會議，每次半小時，共 20 場、約 10 個月完成。</p>
   <div class="hero-meta">
-    <div class="meta-item"><div class="meta-dot" style="background:#39d353"></div>5 Phases</div>
-    <div class="meta-item"><div class="meta-dot" style="background:#58a6ff"></div>16 週</div>
-    <div class="meta-item"><div class="meta-dot" style="background:#bc8cff"></div>20 主題模組</div>
-    <div class="meta-item"><div class="meta-dot" style="background:#e3b341"></div>適合混合程度團隊</div>
+    <div class="meta-item"><div class="meta-dot" style="background:#16a34a"></div>5 Phases</div>
+    <div class="meta-item"><div class="meta-dot" style="background:#2563eb"></div>39 週 / 約 10 個月</div>
+    <div class="meta-item"><div class="meta-dot" style="background:#7c3aed"></div>20 場會議</div>
+    <div class="meta-item"><div class="meta-dot" style="background:#d97706"></div>每次 30 分鐘</div>
   </div>
 </div>
 
@@ -421,7 +421,7 @@
         <div class="phase-header" onclick="togglePhase(1)">
           <span class="phase-num">Phase 1</span>
           <span class="phase-title-text">基礎建設層</span>
-          <span class="phase-weeks">Week 1–3</span>
+          <span class="phase-weeks">會議 #01–04 ／ W1–W7</span>
           <span class="phase-chevron open" id="chev-1">▾</span>
         </div>
         <div class="phase-body open" id="body-1">
@@ -430,22 +430,22 @@
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">vSphere 標準交換器 (vSS)</span></div>
               <p class="topic-desc">Port Group、vmnic、上行鏈路架構與 VLAN Trunk 設定</p>
-              <div class="topic-tags"><span class="tag tag-infra">基礎設施</span></div>
+              <div class="topic-tags"><span class="tag tag-infra">基礎設施</span><span class="tag tag-adv">#01 W1</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">vSphere 分散式交換器 (VDS)</span></div>
               <p class="topic-desc">統一管理多主機虛擬網路、Teaming Policy、LACP 與 LLDP/CDP</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-adv">#02 W3</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊡</span><span class="topic-name">VLAN / VXLAN 概念</span></div>
               <p class="topic-desc">802.1Q Trunk、VXLAN 封包封裝、MTU 與 BUM 流量處理</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-adv">#03 W5</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">◈</span><span class="topic-name">NSX 架構概覽</span></div>
               <p class="topic-desc">Control Plane、Management Plane、Data Plane 三層分離架構與元件角色</p>
-              <div class="topic-tags"><span class="tag tag-infra">基礎設施</span></div>
+              <div class="topic-tags"><span class="tag tag-infra">基礎設施</span><span class="tag tag-adv">#04 W7</span></div>
             </div>
           </div>
         </div>
@@ -459,7 +459,7 @@
         <div class="phase-header" onclick="togglePhase(2)">
           <span class="phase-num">Phase 2</span>
           <span class="phase-title-text">NSX 核心部署</span>
-          <span class="phase-weeks">Week 4–6</span>
+          <span class="phase-weeks">會議 #05–08 ／ W9–W15</span>
           <span class="phase-chevron" id="chev-2">▾</span>
         </div>
         <div class="phase-body" id="body-2">
@@ -468,22 +468,22 @@
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">◈</span><span class="topic-name">NSX Manager 安裝與高可用</span></div>
               <p class="topic-desc">3-node cluster 部署、VIP 設定、系統需求與版本規劃</p>
-              <div class="topic-tags"><span class="tag tag-infra">基礎設施</span></div>
+              <div class="topic-tags"><span class="tag tag-infra">基礎設施</span><span class="tag tag-adv">#05 W9</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">Transport Zone & Node</span></div>
               <p class="topic-desc">Overlay / VLAN Transport Zone、Host Transport Node 準備與 TEP 配置</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-adv">#06 W11</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">Logical Switch / Segment</span></div>
               <p class="topic-desc">建立 Overlay Segment、連接 VM、驗證 BUM 複製模式（Ingress/Hybrid）</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-adv">#07 W13</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊡</span><span class="topic-name">Tier-0 / Tier-1 Gateway</span></div>
               <p class="topic-desc">BGP/Static 路由、Uplink 設計、SR 與 DR 元件部署位置</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-adv">#08 W15</span></div>
             </div>
           </div>
         </div>
@@ -497,7 +497,7 @@
         <div class="phase-header" onclick="togglePhase(3)">
           <span class="phase-num">Phase 3</span>
           <span class="phase-title-text">安全性：微分段</span>
-          <span class="phase-weeks">Week 7–9</span>
+          <span class="phase-weeks">會議 #09–12 ／ W17–W23</span>
           <span class="phase-chevron" id="chev-3">▾</span>
         </div>
         <div class="phase-body" id="body-3">
@@ -506,22 +506,22 @@
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">🛡</span><span class="topic-name">分散式防火牆 (DFW)</span></div>
               <p class="topic-desc">Kernel Module、Rule 評估順序、Context Profile 與 L7 App ID</p>
-              <div class="topic-tags"><span class="tag tag-sec">安全性</span></div>
+              <div class="topic-tags"><span class="tag tag-sec">安全性</span><span class="tag tag-adv">#09 W17</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊙</span><span class="topic-name">NSX Groups & Tags</span></div>
               <p class="topic-desc">動態群組條件（VM name、Tag、OS、Security Policy）與自動化標記策略</p>
-              <div class="topic-tags"><span class="tag tag-sec">安全性</span></div>
+              <div class="topic-tags"><span class="tag tag-sec">安全性</span><span class="tag tag-adv">#10 W19</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">◈</span><span class="topic-name">微分段設計方法</span></div>
               <p class="topic-desc">Zero-Trust 分層（Macro→Micro）、Ring-fence 隔離、Policy 命名規範</p>
-              <div class="topic-tags"><span class="tag tag-sec">安全性</span></div>
+              <div class="topic-tags"><span class="tag tag-sec">安全性</span><span class="tag tag-adv">#11 W21</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">👤</span><span class="topic-name">Identity-Based Firewall</span></div>
               <p class="topic-desc">AD 整合、User-to-IP 映射、IDFW Rule 與 RDP/Horizon 場景應用</p>
-              <div class="topic-tags"><span class="tag tag-sec">安全性</span></div>
+              <div class="topic-tags"><span class="tag tag-sec">安全性</span><span class="tag tag-adv">#12 W23</span></div>
             </div>
           </div>
         </div>
@@ -535,7 +535,7 @@
         <div class="phase-header" onclick="togglePhase(4)">
           <span class="phase-num">Phase 4</span>
           <span class="phase-title-text">進階網路功能</span>
-          <span class="phase-weeks">Week 10–13</span>
+          <span class="phase-weeks">會議 #13–16 ／ W25–W31</span>
           <span class="phase-chevron" id="chev-4">▾</span>
         </div>
         <div class="phase-body" id="body-4">
@@ -544,22 +544,22 @@
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">◫</span><span class="topic-name">NSX VPC (Project)</span></div>
               <p class="topic-desc">Multi-tenancy 隔離、自助服務網段、IP Prefix 規劃與 Quota 控管</p>
-              <div class="topic-tags"><span class="tag tag-adv">進階功能</span></div>
+              <div class="topic-tags"><span class="tag tag-adv">進階功能</span><span class="tag tag-infra">#13 W25</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊡</span><span class="topic-name">NAT 與 VPN</span></div>
               <p class="topic-desc">SNAT/DNAT/Reflexive、IPsec Policy-Based/Route-Based、L2 VPN 場景</p>
-              <div class="topic-tags"><span class="tag tag-adv">進階功能</span></div>
+              <div class="topic-tags"><span class="tag tag-adv">進階功能</span><span class="tag tag-infra">#14 W27</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">DNS / DHCP 服務</span></div>
               <p class="topic-desc">NSX 原生 DHCP Relay / Server、DNS Forwarder 設定與故障排查</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-infra">#15 W29</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">◉</span><span class="topic-name">Ops：監控與排查</span></div>
               <p class="topic-desc">Traceflow、Port Mirroring、Flow Monitoring、中央 CLI 與 API 操作</p>
-              <div class="topic-tags"><span class="tag tag-adv">進階功能</span></div>
+              <div class="topic-tags"><span class="tag tag-adv">進階功能</span><span class="tag tag-infra">#16 W31</span></div>
             </div>
           </div>
         </div>
@@ -573,7 +573,7 @@
         <div class="phase-header" onclick="togglePhase(5)">
           <span class="phase-num">Phase 5</span>
           <span class="phase-title-text">AVI 負載平衡</span>
-          <span class="phase-weeks">Week 14–16</span>
+          <span class="phase-weeks">會議 #17–20 ／ W33–W39</span>
           <span class="phase-chevron" id="chev-5">▾</span>
         </div>
         <div class="phase-body" id="body-5">
@@ -582,22 +582,22 @@
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">◈</span><span class="topic-name">AVI 架構與元件</span></div>
               <p class="topic-desc">Controller Cluster、Service Engine (SE)、VSP 整合、License 模型</p>
-              <div class="topic-tags"><span class="tag tag-lb">負載平衡</span></div>
+              <div class="topic-tags"><span class="tag tag-lb">負載平衡</span><span class="tag tag-infra">#17 W33</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊡</span><span class="topic-name">Virtual Service 設計</span></div>
               <p class="topic-desc">Basic / Adv Profile、Health Monitor、Pool Server、SSL Offload 設定</p>
-              <div class="topic-tags"><span class="tag tag-lb">負載平衡</span></div>
+              <div class="topic-tags"><span class="tag tag-lb">負載平衡</span><span class="tag tag-infra">#18 W35</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">AVI × NSX 整合</span></div>
               <p class="topic-desc">SE 部署在 NSX Segment、DFW 搭配 Service Insertion、East-West LB 模式</p>
-              <div class="topic-tags"><span class="tag tag-lb">負載平衡</span><span class="tag tag-sec">安全性</span></div>
+              <div class="topic-tags"><span class="tag tag-lb">負載平衡</span><span class="tag tag-sec">安全性</span><span class="tag tag-infra">#19 W37</span></div>
             </div>
             <div class="topic">
               <div class="topic-header"><span class="topic-icon">🛡</span><span class="topic-name">WAF 與進階 Profile</span></div>
               <p class="topic-desc">WAF Policy、DataScript、Application Profile（HTTP/DNS/L4），Alert 與 Analytics</p>
-              <div class="topic-tags"><span class="tag tag-sec">安全性</span></div>
+              <div class="topic-tags"><span class="tag tag-sec">安全性</span><span class="tag tag-infra">#20 W39</span></div>
             </div>
           </div>
         </div>
@@ -621,37 +621,37 @@
       </thead>
       <tbody>
         <tr>
-          <td class="td-phase" style="color:#39d353">Phase 1</td>
+          <td class="td-phase" style="color:#16a34a">Phase 1</td>
           <td>基礎建設層</td>
-          <td>Week 1–3</td>
+          <td>W1–W7（#01–04）</td>
           <td>vSS、VDS、VXLAN</td>
           <td>⬤○○○○</td>
         </tr>
         <tr>
-          <td class="td-phase" style="color:#58a6ff">Phase 2</td>
+          <td class="td-phase" style="color:#2563eb">Phase 2</td>
           <td>NSX 核心部署</td>
-          <td>Week 4–6</td>
+          <td>W9–W15（#05–08）</td>
           <td>NSX Manager、Transport Zone、Segment、Gateway</td>
           <td>⬤⬤○○○</td>
         </tr>
         <tr>
-          <td class="td-phase" style="color:#bc8cff">Phase 3</td>
+          <td class="td-phase" style="color:#7c3aed">Phase 3</td>
           <td>安全性：微分段</td>
-          <td>Week 7–9</td>
+          <td>W17–W23（#09–12）</td>
           <td>DFW、Groups、Zero-Trust、IDFW</td>
           <td>⬤⬤⬤○○</td>
         </tr>
         <tr>
-          <td class="td-phase" style="color:#e3b341">Phase 4</td>
+          <td class="td-phase" style="color:#d97706">Phase 4</td>
           <td>進階網路功能</td>
-          <td>Week 10–13</td>
+          <td>W25–W31（#13–16）</td>
           <td>VPC、NAT、VPN、Traceflow</td>
           <td>⬤⬤⬤⬤○</td>
         </tr>
         <tr>
-          <td class="td-phase" style="color:#f78166">Phase 5</td>
+          <td class="td-phase" style="color:#dc2626">Phase 5</td>
           <td>AVI 負載平衡</td>
-          <td>Week 14–16</td>
+          <td>W33–W39（#17–20）</td>
           <td>AVI Controller、Virtual Service、WAF</td>
           <td>⬤⬤⬤⬤⬤</td>
         </tr>
@@ -659,10 +659,42 @@
     </table>
   </div>
 
+  <!-- Meeting schedule table -->
+  <div class="summary-section" style="margin-top:24px;">
+    <div class="summary-title">## 會議時程表（兩週一次，每次 30 分鐘）</div>
+    <table>
+      <thead>
+        <tr><th>會議</th><th>週次</th><th>主題</th><th>Phase</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="td-phase" style="color:#16a34a">#01</td><td>W1</td><td>vSphere 標準交換器 (vSS)</td><td>Phase 1</td></tr>
+        <tr><td class="td-phase" style="color:#16a34a">#02</td><td>W3</td><td>vSphere 分散式交換器 (VDS)</td><td>Phase 1</td></tr>
+        <tr><td class="td-phase" style="color:#16a34a">#03</td><td>W5</td><td>VLAN / VXLAN 概念</td><td>Phase 1</td></tr>
+        <tr><td class="td-phase" style="color:#16a34a">#04</td><td>W7</td><td>NSX 架構概覽</td><td>Phase 1</td></tr>
+        <tr><td class="td-phase" style="color:#2563eb">#05</td><td>W9</td><td>NSX Manager 安裝與高可用</td><td>Phase 2</td></tr>
+        <tr><td class="td-phase" style="color:#2563eb">#06</td><td>W11</td><td>Transport Zone & Node</td><td>Phase 2</td></tr>
+        <tr><td class="td-phase" style="color:#2563eb">#07</td><td>W13</td><td>Logical Switch / Segment</td><td>Phase 2</td></tr>
+        <tr><td class="td-phase" style="color:#2563eb">#08</td><td>W15</td><td>Tier-0 / Tier-1 Gateway</td><td>Phase 2</td></tr>
+        <tr><td class="td-phase" style="color:#7c3aed">#09</td><td>W17</td><td>分散式防火牆 (DFW)</td><td>Phase 3</td></tr>
+        <tr><td class="td-phase" style="color:#7c3aed">#10</td><td>W19</td><td>NSX Groups & Tags</td><td>Phase 3</td></tr>
+        <tr><td class="td-phase" style="color:#7c3aed">#11</td><td>W21</td><td>微分段設計方法</td><td>Phase 3</td></tr>
+        <tr><td class="td-phase" style="color:#7c3aed">#12</td><td>W23</td><td>Identity-Based Firewall</td><td>Phase 3</td></tr>
+        <tr><td class="td-phase" style="color:#d97706">#13</td><td>W25</td><td>NSX VPC (Project)</td><td>Phase 4</td></tr>
+        <tr><td class="td-phase" style="color:#d97706">#14</td><td>W27</td><td>NAT 與 VPN</td><td>Phase 4</td></tr>
+        <tr><td class="td-phase" style="color:#d97706">#15</td><td>W29</td><td>DNS / DHCP 服務</td><td>Phase 4</td></tr>
+        <tr><td class="td-phase" style="color:#d97706">#16</td><td>W31</td><td>Ops：監控與排查</td><td>Phase 4</td></tr>
+        <tr><td class="td-phase" style="color:#dc2626">#17</td><td>W33</td><td>AVI 架構與元件</td><td>Phase 5</td></tr>
+        <tr><td class="td-phase" style="color:#dc2626">#18</td><td>W35</td><td>Virtual Service 設計</td><td>Phase 5</td></tr>
+        <tr><td class="td-phase" style="color:#dc2626">#19</td><td>W37</td><td>AVI × NSX 整合</td><td>Phase 5</td></tr>
+        <tr><td class="td-phase" style="color:#dc2626">#20</td><td>W39</td><td>WAF 與進階 Profile</td><td>Phase 5</td></tr>
+      </tbody>
+    </table>
+  </div>
+
 </main>
 
 <footer>
-  Generated for VMware NSX 建置團隊 · 16 weeks · 5 phases · 20 modules
+  Generated for VMware NSX 建置團隊 · 兩週一次 · 20 場會議 · 約 10 個月
 </footer>
 
 <script>
