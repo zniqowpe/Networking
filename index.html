@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VMware NSX 學習路徑大綱</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=TASA+Explorer:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #f5f5f4;
@@ -22,353 +22,125 @@
     --coral:  #dc2626;
     --mono: 'IBM Plex Mono', monospace;
     --sans: 'Noto Sans TC', sans-serif;
+    --display: 'TASA Explorer', sans-serif;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.7; min-height: 100vh; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-size: 15px;
-    line-height: 1.7;
-    min-height: 100vh;
-  }
-
-  /* ── Header ── */
-  header {
-    border-bottom: 1px solid var(--border);
-    padding: 20px 0;
-    background: var(--bg);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(8px);
-  }
-  .header-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .repo-icon {
-    width: 20px; height: 20px;
-    fill: var(--text2);
-    flex-shrink: 0;
-  }
-  .repo-path {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--text2);
-  }
+  header { border-bottom: 1px solid var(--border); padding: 20px 0; background: var(--bg); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
+  .header-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 12px; }
+  .repo-icon { width: 20px; height: 20px; fill: var(--text2); flex-shrink: 0; }
+  .repo-path { font-family: var(--mono); font-size: 13px; color: var(--text2); }
   .repo-path .org { color: var(--blue); }
   .repo-path .sep { color: var(--text3); }
   .repo-path .repo { color: var(--text); font-weight: 500; }
-  .badge {
-    margin-left: auto;
-    font-family: var(--mono);
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 99px;
-    border: 1px solid var(--border2);
-    color: var(--text2);
-  }
+  .badge { margin-left: auto; font-family: var(--mono); font-size: 11px; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--border2); color: var(--text2); }
 
-  /* ── Hero ── */
-  .hero {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 48px 24px 32px;
-    border-bottom: 1px solid var(--border);
-  }
-  .hero-tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--teal);
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    margin-bottom: 12px;
-  }
-  h1 {
-    font-size: clamp(24px, 4vw, 36px);
-    font-weight: 700;
-    line-height: 1.25;
-    color: var(--text);
-    margin-bottom: 12px;
-  }
+  .hero { max-width: 900px; margin: 0 auto; padding: 48px 24px 32px; border-bottom: 1px solid var(--border); }
+  .hero-tag { font-family: var(--mono); font-size: 11px; color: var(--teal); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px; }
+  h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 700; line-height: 1.25; color: var(--text); margin-bottom: 12px; font-family: var(--display); }
   h1 span { color: var(--blue); }
-  .hero-desc {
-    color: var(--text2);
-    max-width: 560px;
-    font-weight: 300;
-  }
-  .hero-meta {
-    display: flex;
-    gap: 24px;
-    margin-top: 24px;
-    flex-wrap: wrap;
-  }
-  .meta-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--text3);
-  }
-  .meta-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-  }
+  .hero-tag { font-family: var(--mono); font-size: 11px; color: var(--teal); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px; }
+  .phase-title-text { font-size: 14px; font-weight: 500; flex: 1; font-family: var(--display); }
+  .topic-name { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; transition: color .15s; font-family: var(--display); }
+  .hero-desc { color: var(--text2); max-width: 560px; font-weight: 300; }
+  .hero-meta { display: flex; gap: 24px; margin-top: 24px; flex-wrap: wrap; }
+  .meta-item { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 12px; color: var(--text3); }
+  .meta-dot { width: 8px; height: 8px; border-radius: 50%; }
 
-  /* ── Main layout ── */
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
+  /* overall progress bar in hero */
+  .overall-progress { margin-top: 20px; }
+  .overall-progress-bar { height: 6px; background: var(--border); border-radius: 99px; overflow: hidden; margin-top: 6px; }
+  .overall-progress-fill { height: 100%; background: var(--teal); border-radius: 99px; transition: width .4s ease; width: 0%; }
+  .overall-progress-label { font-family: var(--mono); font-size: 11px; color: var(--text3); }
 
-  /* ── Timeline ── */
+  main { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+
   .timeline { position: relative; }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 15px;
-    top: 0; bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--border), var(--border) 90%, transparent);
-  }
+  .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--border), var(--border) 90%, transparent); }
 
   .phase { position: relative; padding-left: 48px; margin-bottom: 40px; }
-
-  .phase-node {
-    position: absolute;
-    left: 0; top: 0;
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    border: 2px solid var(--bg);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 500;
-    z-index: 2;
-  }
-
-  .phase-card {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: border-color .2s;
-  }
+  .phase-node { position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 11px; font-weight: 500; z-index: 2; transition: background .3s; }
+  .phase-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: border-color .2s; }
   .phase-card:hover { border-color: var(--border2); }
-
-  .phase-header {
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    user-select: none;
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    transition: background .15s;
-  }
+  .phase-header { padding: 16px 20px; display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; background: var(--bg2); border-bottom: 1px solid var(--border); transition: background .15s; }
   .phase-header:hover { background: var(--bg3); }
-
-  .phase-num {
-    font-family: var(--mono);
-    font-size: 11px;
-    padding: 2px 7px;
-    border-radius: 4px;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-  .phase-title-text {
-    font-size: 14px;
-    font-weight: 500;
-    flex: 1;
-  }
-  .phase-weeks {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text3);
-    white-space: nowrap;
-  }
-  .phase-chevron {
-    color: var(--text3);
-    font-size: 12px;
-    transition: transform .2s;
-    flex-shrink: 0;
-  }
+  .phase-num { font-family: var(--mono); font-size: 11px; padding: 2px 7px; border-radius: 4px; font-weight: 500; white-space: nowrap; }
+  .phase-title-text { font-size: 14px; font-weight: 500; flex: 1; }
+  .phase-weeks { font-family: var(--mono); font-size: 11px; color: var(--text3); white-space: nowrap; }
+  .phase-progress-text { font-family: var(--mono); font-size: 11px; white-space: nowrap; }
+  .phase-chevron { color: var(--text3); font-size: 12px; transition: transform .2s; flex-shrink: 0; }
   .phase-chevron.open { transform: rotate(180deg); }
+  .phase-body { background: var(--bg); overflow: hidden; max-height: 0; transition: max-height .35s ease; }
+  .phase-body.open { max-height: 1000px; }
+  .phase-desc { padding: 14px 20px 0; font-size: 13px; color: var(--text2); font-weight: 300; }
 
-  .phase-body {
-    background: var(--bg);
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height .35s ease;
-  }
-  .phase-body.open { max-height: 800px; }
+  /* phase progress bar */
+  .phase-prog-bar { height: 3px; background: var(--border); margin: 10px 20px 0; border-radius: 99px; overflow: hidden; }
+  .phase-prog-fill { height: 100%; border-radius: 99px; transition: width .4s ease; width: 0%; }
 
-  .phase-desc {
-    padding: 14px 20px 0;
-    font-size: 13px;
-    color: var(--text2);
-    font-weight: 300;
-  }
+  /* topic rows (replacing grid) */
+  .topics-list { margin: 10px 0 0; }
+  .topic-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 20px; border-top: 1px solid var(--border); cursor: pointer; transition: background .12s; }
+  .topic-row:hover { background: var(--bg2); }
+  .topic-row.done .topic-name { text-decoration: line-through; color: var(--text3); }
+  .topic-row.done .topic-desc-text { color: var(--text3); }
+  .topic-row.done { opacity: .7; }
 
-  .topics-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--border);
-    margin: 14px 0 0;
-    border-top: 1px solid var(--border);
-  }
-  @media (max-width: 560px) { .topics-grid { grid-template-columns: 1fr; } }
+  /* checkbox */
+  .cb { width: 18px; height: 18px; border-radius: 4px; border: 1.5px solid var(--border2); flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; transition: background .15s, border-color .15s; }
+  .cb.checked { border-color: var(--teal); background: var(--teal); }
+  .cb.checked::after { content: ''; display: block; width: 5px; height: 9px; border: 2px solid #fff; border-top: none; border-left: none; transform: rotate(45deg) translate(-1px, -1px); }
 
-  .topic {
-    background: var(--bg);
-    padding: 14px 18px;
-    transition: background .15s;
-    position: relative;
-  }
-  .topic:hover { background: var(--bg2); }
-
-  .topic-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 5px;
-  }
-  .topic-icon {
-    font-size: 13px;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .topic-name {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
-    line-height: 1.4;
-  }
-  .topic-desc {
-    font-size: 12px;
-    color: var(--text2);
-    line-height: 1.6;
-    font-weight: 300;
-    padding-left: 21px;
-  }
-  .topic-tags {
-    margin-top: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding-left: 21px;
-  }
-  .tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    padding: 1px 7px;
-    border-radius: 4px;
-    border: 1px solid;
-  }
+  .topic-content { flex: 1; min-width: 0; }
+  .topic-name { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; transition: color .15s; }
+  .topic-desc-text { font-size: 12px; color: var(--text2); line-height: 1.6; font-weight: 300; margin-top: 2px; }
+  .topic-tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag { font-family: var(--mono); font-size: 10px; padding: 1px 7px; border-radius: 4px; border: 1px solid; }
+  .meeting-num { font-family: var(--mono); font-size: 11px; color: var(--text3); white-space: nowrap; flex-shrink: 0; padding-top: 3px; }
 
   /* Phase color themes */
   .p1 .phase-node { background: #dcfce7; border-color: #16a34a; color: #16a34a; }
   .p1 .phase-num  { background: #f0fdf4; color: #16a34a; }
-  .p1 .phase-header:hover { border-left: 2px solid #39d353; }
-
+  .p1 .phase-prog-fill { background: #16a34a; }
   .p2 .phase-node { background: #dbeafe; border-color: #2563eb; color: #2563eb; }
   .p2 .phase-num  { background: #eff6ff; color: #2563eb; }
-
+  .p2 .phase-prog-fill { background: #2563eb; }
   .p3 .phase-node { background: #ede9fe; border-color: #7c3aed; color: #7c3aed; }
   .p3 .phase-num  { background: #f5f3ff; color: #7c3aed; }
-
+  .p3 .phase-prog-fill { background: #7c3aed; }
   .p4 .phase-node { background: #fef3c7; border-color: #d97706; color: #d97706; }
   .p4 .phase-num  { background: #fffbeb; color: #d97706; }
-
+  .p4 .phase-prog-fill { background: #d97706; }
   .p5 .phase-node { background: #fee2e2; border-color: #dc2626; color: #dc2626; }
   .p5 .phase-num  { background: #fff1f2; color: #dc2626; }
+  .p5 .phase-prog-fill { background: #dc2626; }
 
   .tag-infra { border-color: #d8d5d0; color: #57534e; background: #f5f5f4; }
-  .tag-net   { border-color: #1f4068; color: #2563eb; background: #eff6ff; }
-  .tag-sec   { border-color: #3a1f5e; color: #7c3aed; background: #f5f3ff; }
-  .tag-adv   { border-color: #5c3d10; color: #d97706; background: #fffbeb; }
-  .tag-lb    { border-color: #5c2516; color: #dc2626; background: #fff1f2; }
+  .tag-net   { border-color: #bfdbfe; color: #2563eb; background: #eff6ff; }
+  .tag-sec   { border-color: #ddd6fe; color: #7c3aed; background: #f5f3ff; }
+  .tag-adv   { border-color: #fde68a; color: #d97706; background: #fffbeb; }
+  .tag-lb    { border-color: #fecaca; color: #dc2626; background: #fff1f2; }
 
-  /* ── Summary table ── */
-  .summary-section {
-    margin-top: 48px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .summary-title {
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    padding: 12px 20px;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--text2);
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
+  .summary-section { margin-top: 48px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .summary-title { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 12px 20px; font-family: var(--mono); font-size: 12px; color: var(--text2); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
   thead tr { background: var(--bg3); }
-  th {
-    text-align: left;
-    padding: 10px 16px;
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 400;
-    color: var(--text3);
-    border-bottom: 1px solid var(--border);
-    white-space: nowrap;
-  }
-  td {
-    padding: 10px 16px;
-    border-bottom: 1px solid var(--border);
-    color: var(--text2);
-    font-weight: 300;
-  }
+  th { text-align: left; padding: 10px 16px; font-family: var(--mono); font-size: 11px; font-weight: 400; color: var(--text3); border-bottom: 1px solid var(--border); white-space: nowrap; }
+  td { padding: 10px 16px; border-bottom: 1px solid var(--border); color: var(--text2); font-weight: 300; }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: var(--bg2); }
   .td-phase { font-family: var(--mono); font-size: 12px; font-weight: 500; }
 
-  /* ── Footer ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 24px;
-    text-align: center;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text3);
-  }
+  footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-family: var(--mono); font-size: 11px; color: var(--text3); }
 
-  /* ── Expand all button ── */
-  .toolbar {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-  }
-  .btn-expand {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text3);
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: 4px 12px;
-    cursor: pointer;
-    transition: color .15s, border-color .15s;
-  }
-  .btn-expand:hover { color: var(--text); border-color: var(--border2); }
+  .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  .toolbar-right { display: flex; gap: 8px; }
+  .btn-sm { font-family: var(--mono); font-size: 11px; color: var(--text3); background: none; border: 1px solid var(--border); border-radius: 5px; padding: 4px 12px; cursor: pointer; transition: color .15s, border-color .15s; }
+  .btn-sm:hover { color: var(--text); border-color: var(--border2); }
+  .btn-reset { color: var(--coral); border-color: #fecaca; }
+  .btn-reset:hover { background: #fff1f2; border-color: var(--coral); }
 
-  /* animate in */
   @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
   .phase { animation: fadeUp .4s ease both; }
   .phase:nth-child(1) { animation-delay: .05s; }
@@ -380,7 +152,6 @@
 </head>
 <body>
 
-<!-- Header -->
 <header>
   <div class="header-inner">
     <svg class="repo-icon" viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8V1.5Z"/></svg>
@@ -393,7 +164,6 @@
   </div>
 </header>
 
-<!-- Hero -->
 <div class="hero">
   <div class="hero-tag">📋 README.md</div>
   <h1>VMware <span>NSX</span> 學習路徑大綱</h1>
@@ -404,48 +174,72 @@
     <div class="meta-item"><div class="meta-dot" style="background:#7c3aed"></div>20 場會議</div>
     <div class="meta-item"><div class="meta-dot" style="background:#d97706"></div>每次 30 分鐘</div>
   </div>
+  <div class="overall-progress">
+    <div class="overall-progress-label" id="overall-label">整體進度：0 / 20 完成</div>
+    <div class="overall-progress-bar"><div class="overall-progress-fill" id="overall-fill"></div></div>
+  </div>
 </div>
 
-<!-- Main -->
 <main>
   <div class="toolbar">
-    <button class="btn-expand" id="toggleAll" onclick="toggleAll()">展開全部</button>
+    <div class="toolbar-right">
+      <button class="btn-sm" id="toggleAll" onclick="toggleAll()">展開全部</button>
+      <button class="btn-sm btn-reset" onclick="resetAll()">重置進度</button>
+    </div>
   </div>
 
   <div class="timeline" id="timeline">
 
     <!-- Phase 1 -->
     <div class="phase p1">
-      <div class="phase-node">01</div>
+      <div class="phase-node" id="node-1">01</div>
       <div class="phase-card">
         <div class="phase-header" onclick="togglePhase(1)">
           <span class="phase-num">Phase 1</span>
           <span class="phase-title-text">基礎建設層</span>
           <span class="phase-weeks">會議 #01–04 ／ W1–W7</span>
+          <span class="phase-progress-text" id="ptxt-1" style="color:#16a34a"></span>
           <span class="phase-chevron open" id="chev-1">▾</span>
         </div>
         <div class="phase-body open" id="body-1">
           <p class="phase-desc">vSphere 網路基礎，確保所有成員站在同一起點。熟悉成員可擔任小組導師，加速對齊進度。</p>
-          <div class="topics-grid">
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">vSphere 標準交換器 (vSS)</span></div>
-              <p class="topic-desc">Port Group、vmnic、上行鏈路架構與 VLAN Trunk 設定</p>
-              <div class="topic-tags"><span class="tag tag-infra">基礎設施</span><span class="tag tag-adv">#01 W1</span></div>
+          <div class="phase-prog-bar"><div class="phase-prog-fill" id="pfill-1"></div></div>
+          <div class="topics-list">
+            <div class="topic-row" data-id="t01" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t01"></div>
+              <div class="topic-content">
+                <div class="topic-name">vSphere 標準交換器 (vSS)</div>
+                <div class="topic-desc-text">Port Group、vmnic、上行鏈路架構與 VLAN Trunk 設定</div>
+                <div class="topic-tags"><span class="tag tag-infra">基礎設施</span></div>
+              </div>
+              <span class="meeting-num">#01 W1</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">vSphere 分散式交換器 (VDS)</span></div>
-              <p class="topic-desc">統一管理多主機虛擬網路、Teaming Policy、LACP 與 LLDP/CDP</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-adv">#02 W3</span></div>
+            <div class="topic-row" data-id="t02" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t02"></div>
+              <div class="topic-content">
+                <div class="topic-name">vSphere 分散式交換器 (VDS)</div>
+                <div class="topic-desc-text">統一管理多主機虛擬網路、Teaming Policy、LACP 與 LLDP/CDP</div>
+                <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              </div>
+              <span class="meeting-num">#02 W3</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊡</span><span class="topic-name">VLAN / VXLAN 概念</span></div>
-              <p class="topic-desc">802.1Q Trunk、VXLAN 封包封裝、MTU 與 BUM 流量處理</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-adv">#03 W5</span></div>
+            <div class="topic-row" data-id="t03" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t03"></div>
+              <div class="topic-content">
+                <div class="topic-name">VLAN / VXLAN 概念</div>
+                <div class="topic-desc-text">802.1Q Trunk、VXLAN 封包封裝、MTU 與 BUM 流量處理</div>
+                <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              </div>
+              <span class="meeting-num">#03 W5</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">◈</span><span class="topic-name">NSX 架構概覽</span></div>
-              <p class="topic-desc">Control Plane、Management Plane、Data Plane 三層分離架構與元件角色</p>
-              <div class="topic-tags"><span class="tag tag-infra">基礎設施</span><span class="tag tag-adv">#04 W7</span></div>
+            <div class="topic-row" data-id="t04" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t04"></div>
+              <div class="topic-content">
+                <div class="topic-name">NSX 架構概覽</div>
+                <div class="topic-desc-text">Control Plane、Management Plane、Data Plane 三層分離架構與元件角色</div>
+                <div class="topic-tags"><span class="tag tag-infra">基礎設施</span></div>
+              </div>
+              <span class="meeting-num">#04 W7</span>
             </div>
           </div>
         </div>
@@ -454,36 +248,54 @@
 
     <!-- Phase 2 -->
     <div class="phase p2">
-      <div class="phase-node">02</div>
+      <div class="phase-node" id="node-2">02</div>
       <div class="phase-card">
         <div class="phase-header" onclick="togglePhase(2)">
           <span class="phase-num">Phase 2</span>
           <span class="phase-title-text">NSX 核心部署</span>
           <span class="phase-weeks">會議 #05–08 ／ W9–W15</span>
+          <span class="phase-progress-text" id="ptxt-2" style="color:#2563eb"></span>
           <span class="phase-chevron" id="chev-2">▾</span>
         </div>
         <div class="phase-body" id="body-2">
           <p class="phase-desc">安裝、設定 NSX Manager 與 Transport Zone 等核心元件。建議搭配 Lab 環境，親手部署驗證。</p>
-          <div class="topics-grid">
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">◈</span><span class="topic-name">NSX Manager 安裝與高可用</span></div>
-              <p class="topic-desc">3-node cluster 部署、VIP 設定、系統需求與版本規劃</p>
-              <div class="topic-tags"><span class="tag tag-infra">基礎設施</span><span class="tag tag-adv">#05 W9</span></div>
+          <div class="phase-prog-bar"><div class="phase-prog-fill" id="pfill-2"></div></div>
+          <div class="topics-list">
+            <div class="topic-row" data-id="t05" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t05"></div>
+              <div class="topic-content">
+                <div class="topic-name">NSX Manager 安裝與高可用</div>
+                <div class="topic-desc-text">3-node cluster 部署、VIP 設定、系統需求與版本規劃</div>
+                <div class="topic-tags"><span class="tag tag-infra">基礎設施</span></div>
+              </div>
+              <span class="meeting-num">#05 W9</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">Transport Zone & Node</span></div>
-              <p class="topic-desc">Overlay / VLAN Transport Zone、Host Transport Node 準備與 TEP 配置</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-adv">#06 W11</span></div>
+            <div class="topic-row" data-id="t06" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t06"></div>
+              <div class="topic-content">
+                <div class="topic-name">Transport Zone & Node</div>
+                <div class="topic-desc-text">Overlay / VLAN Transport Zone、Host Transport Node 準備與 TEP 配置</div>
+                <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              </div>
+              <span class="meeting-num">#06 W11</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">Logical Switch / Segment</span></div>
-              <p class="topic-desc">建立 Overlay Segment、連接 VM、驗證 BUM 複製模式（Ingress/Hybrid）</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-adv">#07 W13</span></div>
+            <div class="topic-row" data-id="t07" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t07"></div>
+              <div class="topic-content">
+                <div class="topic-name">Logical Switch / Segment</div>
+                <div class="topic-desc-text">建立 Overlay Segment、連接 VM、驗證 BUM 複製模式（Ingress/Hybrid）</div>
+                <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              </div>
+              <span class="meeting-num">#07 W13</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊡</span><span class="topic-name">Tier-0 / Tier-1 Gateway</span></div>
-              <p class="topic-desc">BGP/Static 路由、Uplink 設計、SR 與 DR 元件部署位置</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-adv">#08 W15</span></div>
+            <div class="topic-row" data-id="t08" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t08"></div>
+              <div class="topic-content">
+                <div class="topic-name">Tier-0 / Tier-1 Gateway</div>
+                <div class="topic-desc-text">BGP/Static 路由、Uplink 設計、SR 與 DR 元件部署位置</div>
+                <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              </div>
+              <span class="meeting-num">#08 W15</span>
             </div>
           </div>
         </div>
@@ -492,36 +304,54 @@
 
     <!-- Phase 3 -->
     <div class="phase p3">
-      <div class="phase-node">03</div>
+      <div class="phase-node" id="node-3">03</div>
       <div class="phase-card">
         <div class="phase-header" onclick="togglePhase(3)">
           <span class="phase-num">Phase 3</span>
           <span class="phase-title-text">安全性：微分段</span>
           <span class="phase-weeks">會議 #09–12 ／ W17–W23</span>
+          <span class="phase-progress-text" id="ptxt-3" style="color:#7c3aed"></span>
           <span class="phase-chevron" id="chev-3">▾</span>
         </div>
         <div class="phase-body" id="body-3">
           <p class="phase-desc">東西向流量防護核心能力，NSX 最具代表性的功能。建議請資深成員主導 Policy 設計討論。</p>
-          <div class="topics-grid">
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">🛡</span><span class="topic-name">分散式防火牆 (DFW)</span></div>
-              <p class="topic-desc">Kernel Module、Rule 評估順序、Context Profile 與 L7 App ID</p>
-              <div class="topic-tags"><span class="tag tag-sec">安全性</span><span class="tag tag-adv">#09 W17</span></div>
+          <div class="phase-prog-bar"><div class="phase-prog-fill" id="pfill-3"></div></div>
+          <div class="topics-list">
+            <div class="topic-row" data-id="t09" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t09"></div>
+              <div class="topic-content">
+                <div class="topic-name">分散式防火牆 (DFW)</div>
+                <div class="topic-desc-text">Kernel Module、Rule 評估順序、Context Profile 與 L7 App ID</div>
+                <div class="topic-tags"><span class="tag tag-sec">安全性</span></div>
+              </div>
+              <span class="meeting-num">#09 W17</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊙</span><span class="topic-name">NSX Groups & Tags</span></div>
-              <p class="topic-desc">動態群組條件（VM name、Tag、OS、Security Policy）與自動化標記策略</p>
-              <div class="topic-tags"><span class="tag tag-sec">安全性</span><span class="tag tag-adv">#10 W19</span></div>
+            <div class="topic-row" data-id="t10" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t10"></div>
+              <div class="topic-content">
+                <div class="topic-name">NSX Groups & Tags</div>
+                <div class="topic-desc-text">動態群組條件（VM name、Tag、OS、Security Policy）與自動化標記策略</div>
+                <div class="topic-tags"><span class="tag tag-sec">安全性</span></div>
+              </div>
+              <span class="meeting-num">#10 W19</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">◈</span><span class="topic-name">微分段設計方法</span></div>
-              <p class="topic-desc">Zero-Trust 分層（Macro→Micro）、Ring-fence 隔離、Policy 命名規範</p>
-              <div class="topic-tags"><span class="tag tag-sec">安全性</span><span class="tag tag-adv">#11 W21</span></div>
+            <div class="topic-row" data-id="t11" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t11"></div>
+              <div class="topic-content">
+                <div class="topic-name">微分段設計方法</div>
+                <div class="topic-desc-text">Zero-Trust 分層（Macro→Micro）、Ring-fence 隔離、Policy 命名規範</div>
+                <div class="topic-tags"><span class="tag tag-sec">安全性</span></div>
+              </div>
+              <span class="meeting-num">#11 W21</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">👤</span><span class="topic-name">Identity-Based Firewall</span></div>
-              <p class="topic-desc">AD 整合、User-to-IP 映射、IDFW Rule 與 RDP/Horizon 場景應用</p>
-              <div class="topic-tags"><span class="tag tag-sec">安全性</span><span class="tag tag-adv">#12 W23</span></div>
+            <div class="topic-row" data-id="t12" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t12"></div>
+              <div class="topic-content">
+                <div class="topic-name">Identity-Based Firewall</div>
+                <div class="topic-desc-text">AD 整合、User-to-IP 映射、IDFW Rule 與 RDP/Horizon 場景應用</div>
+                <div class="topic-tags"><span class="tag tag-sec">安全性</span></div>
+              </div>
+              <span class="meeting-num">#12 W23</span>
             </div>
           </div>
         </div>
@@ -530,36 +360,54 @@
 
     <!-- Phase 4 -->
     <div class="phase p4">
-      <div class="phase-node">04</div>
+      <div class="phase-node" id="node-4">04</div>
       <div class="phase-card">
         <div class="phase-header" onclick="togglePhase(4)">
           <span class="phase-num">Phase 4</span>
           <span class="phase-title-text">進階網路功能</span>
           <span class="phase-weeks">會議 #13–16 ／ W25–W31</span>
+          <span class="phase-progress-text" id="ptxt-4" style="color:#d97706"></span>
           <span class="phase-chevron" id="chev-4">▾</span>
         </div>
         <div class="phase-body" id="body-4">
           <p class="phase-desc">SDN 進階特性：VPC、NAT、VPN 與網路自動化。包含 Day-2 Ops 監控排查工具，維運人員必學。</p>
-          <div class="topics-grid">
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">◫</span><span class="topic-name">NSX VPC (Project)</span></div>
-              <p class="topic-desc">Multi-tenancy 隔離、自助服務網段、IP Prefix 規劃與 Quota 控管</p>
-              <div class="topic-tags"><span class="tag tag-adv">進階功能</span><span class="tag tag-infra">#13 W25</span></div>
+          <div class="phase-prog-bar"><div class="phase-prog-fill" id="pfill-4"></div></div>
+          <div class="topics-list">
+            <div class="topic-row" data-id="t13" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t13"></div>
+              <div class="topic-content">
+                <div class="topic-name">NSX VPC (Project)</div>
+                <div class="topic-desc-text">Multi-tenancy 隔離、自助服務網段、IP Prefix 規劃與 Quota 控管</div>
+                <div class="topic-tags"><span class="tag tag-adv">進階功能</span></div>
+              </div>
+              <span class="meeting-num">#13 W25</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊡</span><span class="topic-name">NAT 與 VPN</span></div>
-              <p class="topic-desc">SNAT/DNAT/Reflexive、IPsec Policy-Based/Route-Based、L2 VPN 場景</p>
-              <div class="topic-tags"><span class="tag tag-adv">進階功能</span><span class="tag tag-infra">#14 W27</span></div>
+            <div class="topic-row" data-id="t14" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t14"></div>
+              <div class="topic-content">
+                <div class="topic-name">NAT 與 VPN</div>
+                <div class="topic-desc-text">SNAT/DNAT/Reflexive、IPsec Policy-Based/Route-Based、L2 VPN 場景</div>
+                <div class="topic-tags"><span class="tag tag-adv">進階功能</span></div>
+              </div>
+              <span class="meeting-num">#14 W27</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">DNS / DHCP 服務</span></div>
-              <p class="topic-desc">NSX 原生 DHCP Relay / Server、DNS Forwarder 設定與故障排查</p>
-              <div class="topic-tags"><span class="tag tag-net">虛擬網路</span><span class="tag tag-infra">#15 W29</span></div>
+            <div class="topic-row" data-id="t15" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t15"></div>
+              <div class="topic-content">
+                <div class="topic-name">DNS / DHCP 服務</div>
+                <div class="topic-desc-text">NSX 原生 DHCP Relay / Server、DNS Forwarder 設定與故障排查</div>
+                <div class="topic-tags"><span class="tag tag-net">虛擬網路</span></div>
+              </div>
+              <span class="meeting-num">#15 W29</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">◉</span><span class="topic-name">Ops：監控與排查</span></div>
-              <p class="topic-desc">Traceflow、Port Mirroring、Flow Monitoring、中央 CLI 與 API 操作</p>
-              <div class="topic-tags"><span class="tag tag-adv">進階功能</span><span class="tag tag-infra">#16 W31</span></div>
+            <div class="topic-row" data-id="t16" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t16"></div>
+              <div class="topic-content">
+                <div class="topic-name">Ops：監控與排查</div>
+                <div class="topic-desc-text">Traceflow、Port Mirroring、Flow Monitoring、中央 CLI 與 API 操作</div>
+                <div class="topic-tags"><span class="tag tag-adv">進階功能</span></div>
+              </div>
+              <span class="meeting-num">#16 W31</span>
             </div>
           </div>
         </div>
@@ -568,104 +416,80 @@
 
     <!-- Phase 5 -->
     <div class="phase p5">
-      <div class="phase-node">05</div>
+      <div class="phase-node" id="node-5">05</div>
       <div class="phase-card">
         <div class="phase-header" onclick="togglePhase(5)">
           <span class="phase-num">Phase 5</span>
           <span class="phase-title-text">AVI 負載平衡</span>
           <span class="phase-weeks">會議 #17–20 ／ W33–W39</span>
+          <span class="phase-progress-text" id="ptxt-5" style="color:#dc2626"></span>
           <span class="phase-chevron" id="chev-5">▾</span>
         </div>
         <div class="phase-body" id="body-5">
           <p class="phase-desc">NSX Advanced Load Balancer 深度整合與企業應用交付。需要前四個 Phase 的 NSX 基礎知識作為鋪墊。</p>
-          <div class="topics-grid">
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">◈</span><span class="topic-name">AVI 架構與元件</span></div>
-              <p class="topic-desc">Controller Cluster、Service Engine (SE)、VSP 整合、License 模型</p>
-              <div class="topic-tags"><span class="tag tag-lb">負載平衡</span><span class="tag tag-infra">#17 W33</span></div>
+          <div class="phase-prog-bar"><div class="phase-prog-fill" id="pfill-5"></div></div>
+          <div class="topics-list">
+            <div class="topic-row" data-id="t17" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t17"></div>
+              <div class="topic-content">
+                <div class="topic-name">AVI 架構與元件</div>
+                <div class="topic-desc-text">Controller Cluster、Service Engine (SE)、VSP 整合、License 模型</div>
+                <div class="topic-tags"><span class="tag tag-lb">負載平衡</span></div>
+              </div>
+              <span class="meeting-num">#17 W33</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊡</span><span class="topic-name">Virtual Service 設計</span></div>
-              <p class="topic-desc">Basic / Adv Profile、Health Monitor、Pool Server、SSL Offload 設定</p>
-              <div class="topic-tags"><span class="tag tag-lb">負載平衡</span><span class="tag tag-infra">#18 W35</span></div>
+            <div class="topic-row" data-id="t18" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t18"></div>
+              <div class="topic-content">
+                <div class="topic-name">Virtual Service 設計</div>
+                <div class="topic-desc-text">Basic / Adv Profile、Health Monitor、Pool Server、SSL Offload 設定</div>
+                <div class="topic-tags"><span class="tag tag-lb">負載平衡</span></div>
+              </div>
+              <span class="meeting-num">#18 W35</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">⊞</span><span class="topic-name">AVI × NSX 整合</span></div>
-              <p class="topic-desc">SE 部署在 NSX Segment、DFW 搭配 Service Insertion、East-West LB 模式</p>
-              <div class="topic-tags"><span class="tag tag-lb">負載平衡</span><span class="tag tag-sec">安全性</span><span class="tag tag-infra">#19 W37</span></div>
+            <div class="topic-row" data-id="t19" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t19"></div>
+              <div class="topic-content">
+                <div class="topic-name">AVI × NSX 整合</div>
+                <div class="topic-desc-text">SE 部署在 NSX Segment、DFW 搭配 Service Insertion、East-West LB 模式</div>
+                <div class="topic-tags"><span class="tag tag-lb">負載平衡</span><span class="tag tag-sec">安全性</span></div>
+              </div>
+              <span class="meeting-num">#19 W37</span>
             </div>
-            <div class="topic">
-              <div class="topic-header"><span class="topic-icon">🛡</span><span class="topic-name">WAF 與進階 Profile</span></div>
-              <p class="topic-desc">WAF Policy、DataScript、Application Profile（HTTP/DNS/L4），Alert 與 Analytics</p>
-              <div class="topic-tags"><span class="tag tag-sec">安全性</span><span class="tag tag-infra">#20 W39</span></div>
+            <div class="topic-row" data-id="t20" onclick="toggleTopic(this)">
+              <div class="cb" id="cb-t20"></div>
+              <div class="topic-content">
+                <div class="topic-name">WAF 與進階 Profile</div>
+                <div class="topic-desc-text">WAF Policy、DataScript、Application Profile（HTTP/DNS/L4），Alert 與 Analytics</div>
+                <div class="topic-tags"><span class="tag tag-sec">安全性</span></div>
+              </div>
+              <span class="meeting-num">#20 W39</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-  </div><!-- /timeline -->
+  </div>
 
-  <!-- Summary table -->
   <div class="summary-section">
     <div class="summary-title">## 學習週期總覽</div>
     <table>
-      <thead>
-        <tr>
-          <th>Phase</th>
-          <th>主題</th>
-          <th>週次</th>
-          <th>核心技術</th>
-          <th>難度</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Phase</th><th>主題</th><th>週次</th><th>核心技術</th><th>難度</th></tr></thead>
       <tbody>
-        <tr>
-          <td class="td-phase" style="color:#16a34a">Phase 1</td>
-          <td>基礎建設層</td>
-          <td>W1–W7（#01–04）</td>
-          <td>vSS、VDS、VXLAN</td>
-          <td>⬤○○○○</td>
-        </tr>
-        <tr>
-          <td class="td-phase" style="color:#2563eb">Phase 2</td>
-          <td>NSX 核心部署</td>
-          <td>W9–W15（#05–08）</td>
-          <td>NSX Manager、Transport Zone、Segment、Gateway</td>
-          <td>⬤⬤○○○</td>
-        </tr>
-        <tr>
-          <td class="td-phase" style="color:#7c3aed">Phase 3</td>
-          <td>安全性：微分段</td>
-          <td>W17–W23（#09–12）</td>
-          <td>DFW、Groups、Zero-Trust、IDFW</td>
-          <td>⬤⬤⬤○○</td>
-        </tr>
-        <tr>
-          <td class="td-phase" style="color:#d97706">Phase 4</td>
-          <td>進階網路功能</td>
-          <td>W25–W31（#13–16）</td>
-          <td>VPC、NAT、VPN、Traceflow</td>
-          <td>⬤⬤⬤⬤○</td>
-        </tr>
-        <tr>
-          <td class="td-phase" style="color:#dc2626">Phase 5</td>
-          <td>AVI 負載平衡</td>
-          <td>W33–W39（#17–20）</td>
-          <td>AVI Controller、Virtual Service、WAF</td>
-          <td>⬤⬤⬤⬤⬤</td>
-        </tr>
+        <tr><td class="td-phase" style="color:#16a34a">Phase 1</td><td>基礎建設層</td><td>W1–W7（#01–04）</td><td>vSS、VDS、VXLAN</td><td>⬤○○○○</td></tr>
+        <tr><td class="td-phase" style="color:#2563eb">Phase 2</td><td>NSX 核心部署</td><td>W9–W15（#05–08）</td><td>NSX Manager、Transport Zone、Segment、Gateway</td><td>⬤⬤○○○</td></tr>
+        <tr><td class="td-phase" style="color:#7c3aed">Phase 3</td><td>安全性：微分段</td><td>W17–W23（#09–12）</td><td>DFW、Groups、Zero-Trust、IDFW</td><td>⬤⬤⬤○○</td></tr>
+        <tr><td class="td-phase" style="color:#d97706">Phase 4</td><td>進階網路功能</td><td>W25–W31（#13–16）</td><td>VPC、NAT、VPN、Traceflow</td><td>⬤⬤⬤⬤○</td></tr>
+        <tr><td class="td-phase" style="color:#dc2626">Phase 5</td><td>AVI 負載平衡</td><td>W33–W39（#17–20）</td><td>AVI Controller、Virtual Service、WAF</td><td>⬤⬤⬤⬤⬤</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Meeting schedule table -->
   <div class="summary-section" style="margin-top:24px;">
     <div class="summary-title">## 會議時程表（兩週一次，每次 30 分鐘）</div>
     <table>
-      <thead>
-        <tr><th>會議</th><th>週次</th><th>主題</th><th>Phase</th></tr>
-      </thead>
+      <thead><tr><th>會議</th><th>週次</th><th>主題</th><th>Phase</th></tr></thead>
       <tbody>
         <tr><td class="td-phase" style="color:#16a34a">#01</td><td>W1</td><td>vSphere 標準交換器 (vSS)</td><td>Phase 1</td></tr>
         <tr><td class="td-phase" style="color:#16a34a">#02</td><td>W3</td><td>vSphere 分散式交換器 (VDS)</td><td>Phase 1</td></tr>
@@ -698,35 +522,97 @@
 </footer>
 
 <script>
-  const allOpen = { state: true };
+  const STORAGE_KEY = 'nsx-roadmap-progress';
+  const PHASE_TOPICS = { 1:[1,2,3,4], 2:[5,6,7,8], 3:[9,10,11,12], 4:[13,14,15,16], 5:[17,18,19,20] };
+  let state = {};
 
-  function togglePhase(id) {
-    const body = document.getElementById('body-' + id);
-    const chev = document.getElementById('chev-' + id);
-    const isOpen = body.classList.contains('open');
-    body.classList.toggle('open', !isOpen);
-    body.style.maxHeight = isOpen ? '0' : body.scrollHeight + 'px';
-    chev.classList.toggle('open', !isOpen);
+  function pad(n) { return n < 10 ? '0'+n : ''+n; }
+
+  function loadState() {
+    try { state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { state = {}; }
   }
 
-  // init: phase 1 open, rest closed
-  document.querySelectorAll('.phase-body').forEach((b, i) => {
-    if (i === 0) { b.style.maxHeight = b.scrollHeight + 'px'; }
-  });
+  function saveState() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function applyState() {
+    for (let i = 1; i <= 20; i++) {
+      const id = 't' + pad(i);
+      const row = document.querySelector('[data-id="'+id+'"]');
+      const cb = document.getElementById('cb-'+id);
+      if (!row || !cb) continue;
+      if (state[id]) {
+        cb.classList.add('checked');
+        row.classList.add('done');
+      } else {
+        cb.classList.remove('checked');
+        row.classList.remove('done');
+      }
+    }
+    updateAllProgress();
+  }
+
+  function toggleTopic(row) {
+    const id = row.dataset.id;
+    state[id] = !state[id];
+    saveState();
+    const cb = row.querySelector('.cb');
+    cb.classList.toggle('checked', state[id]);
+    row.classList.toggle('done', state[id]);
+    updateAllProgress();
+  }
+
+  function updateAllProgress() {
+    let totalDone = 0;
+    for (let p = 1; p <= 5; p++) {
+      const ids = PHASE_TOPICS[p];
+      const done = ids.filter(n => state['t'+pad(n)]).length;
+      const pct = Math.round(done / ids.length * 100);
+      document.getElementById('pfill-'+p).style.width = pct + '%';
+      document.getElementById('ptxt-'+p).textContent = done + '/' + ids.length;
+      totalDone += done;
+    }
+    const overallPct = Math.round(totalDone / 20 * 100);
+    document.getElementById('overall-fill').style.width = overallPct + '%';
+    document.getElementById('overall-label').textContent = '整體進度：' + totalDone + ' / 20 完成（' + overallPct + '%）';
+  }
+
+  function resetAll() {
+    if (!confirm('確定要重置所有進度嗎？')) return;
+    state = {};
+    saveState();
+    applyState();
+  }
+
+  const allOpen = { state: false };
+
+  function togglePhase(id) {
+    const body = document.getElementById('body-'+id);
+    const chev = document.getElementById('chev-'+id);
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    body.style.maxHeight = isOpen ? '0' : body.scrollHeight + 200 + 'px';
+    chev.classList.toggle('open', !isOpen);
+  }
 
   function toggleAll() {
     const btn = document.getElementById('toggleAll');
     allOpen.state = !allOpen.state;
     btn.textContent = allOpen.state ? '收合全部' : '展開全部';
     for (let i = 1; i <= 5; i++) {
-      const body = document.getElementById('body-' + i);
-      const chev = document.getElementById('chev-' + i);
+      const body = document.getElementById('body-'+i);
+      const chev = document.getElementById('chev-'+i);
       body.classList.toggle('open', allOpen.state);
-      body.style.maxHeight = allOpen.state ? body.scrollHeight + 'px' : '0';
+      body.style.maxHeight = allOpen.state ? body.scrollHeight + 200 + 'px' : '0';
       chev.classList.toggle('open', allOpen.state);
     }
   }
-  // init btn label based on state
+
+  // init
+  loadState();
+  document.getElementById('body-1').style.maxHeight = document.getElementById('body-1').scrollHeight + 200 + 'px';
+  applyState();
   document.getElementById('toggleAll').textContent = '展開全部';
 </script>
 </body>
